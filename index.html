@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -9,75 +9,59 @@
 <body>
 
 
-<div class="card container">
-    <div class="card-body">
-        <h1 class="card-title d-flex justify-content-center">Coffee!</h1>
-        <hr>
-        <div class="row">
-            <div class="col order-2">
-                <form>
-                    <div class="form-group">
-                        <label for="roast-selection">Roast</label>
-                        <select id="roast" class="form-control">
-                            <option>all</option>
-                            <option>light</option>
-                            <option>medium</option>
-                            <option>dark</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <div class="col">
-                            <label>Coffee Name</label>
-                            <input type="text" class="form-control">
+    <div class="card container">
+        <div class="card-body">
+            <h1 class="card-title d-flex justify-content-center">Coffee!</h1>
+            <hr>
+            <div class="row">
+                <div class="col order-2">
+                    <form>
+                        <div class="form-group">
+                            <label for="roast-selection">Roast</label>
+                            <select id="roast-selection" class="form-control">
+                                <option>all</option>
+                                <option>light</option>
+                                <option>medium</option>
+                                <option>dark</option>
+                            </select>
                         </div>
-                    </div>
-                    <input id="submit1" class="w-100 bg-primary text-white" type="submit"/>
-                </form>
-                <hr>
-                <!--               Second Form -->
 
-                <form>
-                    <h3>Add a Coffee</h3>
-                    <div class="form-group">
-                        <label for="roast-selection">Roast</label>
-                        <select id="roast-selection" class="form-control">\
-                            <option>all</option>
-                            <option>light</option>
-                            <option>medium</option>
-                            <option>dark</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <div class="col">
-                            <label for="inputPassword" class="col-form-label">Name</label>
-                            <input type="text" class="form-control" id="inputPassword">
+                        <div class="form-group">
+                                <label>Coffee Name</label>
+                                <input type="text" class="form-control">
                         </div>
-                    </div>
-                    <input id="submit2" class="w-100 bg-primary text-white" type="submit"/>
-                </form>
-            </div>
-            <!--                Left Side -->
-            <div class="col order-1">
-                <div class="coffee d-flex">
-                    <h3>NAME</h3>
-                    <p>ROAST</p>
+                        <button id="submit1" class="w-100 btn bg-primary text-white" type="submit"/>Submit</button>
+                    </form>
+                    <hr>
+                    <!--               Second Form -->
+
+                    <form>
+                        <h3>Add a Coffee</h3>
+                        <div class="form-group">
+                            <label for="roast-selection">Roast</label>
+                            <select id="roast-selection" class="form-control">\
+                                <option>all</option>
+                                <option>light</option>
+                                <option>medium</option>
+                                <option>dark</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                                <label for="inputPassword" class="col-form-label">Name</label>
+                                <input type="text" class="form-control" id="inputPassword">
+                        </div>
+                        <button id="submit2" class="w-100 btn bg-primary text-white" type="submit"/>Submit</button>
+                    </form>
                 </div>
+                <!-- Left Side -->
+                <div class="col order-1" >
+                    <div class="row" id="coffees">
 
-
-                <table>
-                    <thead>
-                    <tr class="d-none">
-                        <th>BID</th>
-                        <th>NAME</th>
-                        <th>ROAST</th>
-                    </tr>
-                    </thead>
-                    <tbody id="coffees"></tbody>
-                </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
