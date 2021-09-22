@@ -3,7 +3,7 @@
 function renderCoffee(coffee) {
     var html = '<div class="coffee d-flex row">';
     // html += '<td>' + coffee.id + '</td>';
-    html += '<h5>' + coffee.name + '</h5>';
+    html += '<h3>' + coffee.name + '</h3>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
 
@@ -55,3 +55,17 @@ var roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+
+
+// Loop through all list items, and hide those who don't match the search query
+// for (i = 0; i < li.length; i++) {
+//     a = li[i].getElementsByTagName("a")[0];
+//     txtValue = a.textContent || a.innerText;
+//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//         li[i].style.display = "";
+//     } else {
+//         li[i].style.display = "none";
+//     }
+// }
+// Tip: Remove toUpperCase() if you want to perform a case-sensitive search.
