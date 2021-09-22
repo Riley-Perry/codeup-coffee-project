@@ -69,3 +69,4 @@ submitButton.addEventListener('click', updateCoffees);
 //     }
 // }
 // Tip: Remove toUpperCase() if you want to perform a case-sensitive search.
+//Insert pics for each cup of coffee
