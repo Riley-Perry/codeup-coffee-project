@@ -75,11 +75,19 @@ roastSelection1.addEventListener("change", function() {
     })
 })
 
-// li[i].style.display = "";
-// } else {
-//     li[i].style.display = "none";
-// }
 
+const input = document.querySelector('input[type="search"]');
+
+
+input.addEventListener('search', () => {
+    coffees.forEach(coffee => {
+        if (coffee.name.toUpperCase() == input.value.toUpperCase())
+            coffeeBody.innerHTML = renderCoffee(coffee);
+
+
+    })
+
+})
 
 
 
