@@ -34,11 +34,11 @@ function updateCoffees(e) {
 
 }
 
-// const roastAndName = {
-//     roastSelection2 : coffees.roast.value,
-//     coffeeInput :  input.value,
-//     id: coffees.id += 1
-// }
+const roastAndName = {
+    roastSelection2 : coffees.roast.value,
+    coffeeInput :  input.value,
+    id: coffees.id += 1
+}
 
 function searchCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
