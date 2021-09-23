@@ -1,8 +1,7 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee d-flex row">';
-    // html += '<td>' + coffee.id + '</td>';
+    var html = '<div class="col-md-6 d-flex mb-3">';
     html += '<h3>' + coffee.name + '</h3>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
@@ -12,22 +11,26 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     var html = '';
+
     for(var i = coffees.length - 1; i >= 0; i--) {
-        html += renderCoffee(coffees[i]);
+
+            html += renderCoffee(coffees[i]);
     }
     return html;
+
 }
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedRoast = roastSelection.value;
+    let selectedRoast2 = roastSelection2.value;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
+        if (coffee.roast === selectedRoast2) {
             filteredCoffees.push(coffee);
         }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    coffeeBody.innerHTML = renderCoffees(filteredCoffees)
+    // tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -48,15 +51,27 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-var tbody = document.querySelector('#coffees');
-var submitButton = document.querySelector('#submit');
-var roastSelection = document.querySelector('#roast-selection');
+var coffeeBody = document.querySelector('#coffees');
+var submitButton1 = document.querySelector('#submit1');
+let submitButton2 = document.querySelector("#submit2");
+let roastSelection1 = document.querySelector("#roast-selection1");
+let roastSelection2 = document.querySelector('#roast-selection2');
 
-tbody.innerHTML = renderCoffees(coffees);
+coffeeBody.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
+submitButton1.addEventListener('click', updateCoffees);
+submitButton2.addEventListener('click', updateCoffees);
 
+roastSelection1.addEventListener("change", function() {
+    let selectedRoast = roastSelection1.value;
+    let html = '';
+    coffees.forEach(coffee => {
+        if (selectedRoast === coffee.roast) {
+            console.log(coffee);
 
+        }
+    })
+})
 
 // Loop through all list items, and hide those who don't match the search query
 // for (i = 0; i < li.length; i++) {
@@ -69,4 +84,9 @@ submitButton.addEventListener('click', updateCoffees);
 //     }
 // }
 // Tip: Remove toUpperCase() if you want to perform a case-sensitive search.
+ new-perry-branch-2
+
+
+=======
 //Insert pics for each cup of coffee
+ main
