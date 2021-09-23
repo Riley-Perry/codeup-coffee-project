@@ -75,6 +75,10 @@ roastSelection1.addEventListener("change", function() {
     })
 })
 
+// li[i].style.display = "";
+// } else {
+//     li[i].style.display = "none";
+// }
 
 
 
