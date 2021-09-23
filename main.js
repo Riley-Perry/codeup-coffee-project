@@ -2,7 +2,7 @@
 
 function renderCoffee(coffee) {
     var html = '<div class="col-md-6 d-flex mb-3">';
-    html += '<h3>' + coffee.name + '</h3>';
+    html += '<h3 id="name">' + coffee.name + '</h3>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
 
@@ -77,17 +77,17 @@ roastSelection1.addEventListener("change", function() {
 
 
 const input = document.querySelector('input[type="search"]');
-
-
+const name = document.querySelector("#name");
 input.addEventListener('search', () => {
     coffees.forEach(coffee => {
-        if (coffee.name.toUpperCase() == input.value.toUpperCase())
+        if (input.value.toUpperCase() === coffee.name.toUpperCase()) {
             coffeeBody.innerHTML = renderCoffee(coffee);
-
-
+        }
     })
 
 })
+
+
 
 
 
