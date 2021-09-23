@@ -4,7 +4,9 @@ function renderCoffee(coffee) {
     var html = '<div class="col-md-6 d-flex mb-3">';
     html += '<h3 id="name">' + coffee.name + '</h3>';
     html += '<p>' + coffee.roast + '</p>';
+    html += '<img' + coffee.imgURL + '>'
     html += '</div>';
+
 
     return html;
 }
@@ -34,11 +36,11 @@ function updateCoffees(e) {
 
 }
 
-const roastAndName = {
-    roastSelection2 : coffees.roast.value,
-    coffeeInput :  input.value,
-    id: coffees.id += 1
-}
+// const roastAndName = {
+//     roastSelection2 : coffees.roast.value,
+//     coffeeInput :  input.value,
+//     id: coffees.id += 1
+// }
 
 function searchCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
@@ -56,10 +58,10 @@ function searchCoffees(e) {
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
+    {id: 1, name: 'Light City', roast: 'light', imgURL: "images/light_coffee_beans.jpeg"},
+    {id: 2, name: 'Half City', roast: 'light', imgURL:"images/light_coffee_beans.jpeg"},
+    {id: 3, name: 'Cinnamon', roast: 'light', imgURL: "images/light_coffee_beans.jpeg"},
+    {id: 4, name: 'City', roast: 'medium', imgURL: "images/medium_coffee_beans.jpeg"},
     {id: 5, name: 'American', roast: 'medium'},
     {id: 6, name: 'Breakfast', roast: 'medium'},
     {id: 7, name: 'High', roast: 'dark'},
@@ -100,7 +102,6 @@ roastSelection1.addEventListener("change", function() {
 })
 
 search.addEventListener('keyup', searchCoffees)
-
 
 
 
