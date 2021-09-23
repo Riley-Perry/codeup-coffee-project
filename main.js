@@ -75,6 +75,7 @@ roastSelection1.addEventListener("change", function() {
     })
 })
 
+
 const input = document.querySelector('input[type="search"]');
 const name = document.querySelector("#name");
 input.addEventListener('search', () => {
@@ -89,3 +90,17 @@ input.addEventListener('search', () => {
 
 
 
+
+
+// Loop through all list items, and hide those who don't match the search query
+for (i = 0; i < coffees.length; i++) {
+    a = coffees[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+    } else {
+        li[i].style.display = "none";
+    }
+}
+// Tip: Remove toUpperCase() if you want to perform a case-sensitive search.
+//Insert pics for each cup of coffee
