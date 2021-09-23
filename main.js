@@ -77,16 +77,36 @@ roastSelection1.addEventListener("change", function() {
 
 
 const input = document.querySelector('input[type="search"]');
-const name = document.querySelector("#name");
+ const name = document.querySelector("#name");
 input.addEventListener('search', () => {
     coffees.forEach(coffee => {
         if (input.value.toUpperCase() === coffee.name.toUpperCase()) {
             coffeeBody.innerHTML = renderCoffee(coffee);
         }
     })
-
 })
 
+// const input = document.querySelector('input[type="search"]');
+// const log = document.getElementById('name');
+// var a, coffeeValue, filter;
+// input.addEventListener('input', () =>{
+//     for(var i =0; i < name.length; i++){
+//         a = coffees[i].input[0];
+//         coffeeValue = a.textContent || a.innerText;
+//         if (coffeeValue.toUpperCase().indexOf(filter) > -1) {
+//             coffees[i].style.display = "";
+//         } else{
+//             coffees[i].style.display = "none";
+//         }
+//         }
+//
+// });
+
+
+
+const input2 = document.querySelector('input[type="search"]')
+
+input.addEventListener('search1')
 
 
 
