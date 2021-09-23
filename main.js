@@ -81,6 +81,8 @@ input.addEventListener('search', () => {
     coffees.forEach(coffee => {
         if (coffee.name.toUpperCase() == input.value.toUpperCase())
             coffeeBody.innerHTML = renderCoffee(coffee);
+
+
     })
 
 })
