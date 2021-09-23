@@ -23,12 +23,34 @@ function renderCoffees(coffees) {
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedRoast2 = roastSelection2.value;
+    let coffeeInput = inputCoffee.value;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast2) {
             filteredCoffees.push(coffee);
         }
     });
+    coffeeBody.innerHTML = renderCoffees(filteredCoffees)
+
+}
+
+const roastAndName = {
+    roastSelection2 : coffees.roast.value,
+    coffeeInput :  input.value,
+    id: coffees.id += 1
+}
+
+function searchCoffees(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    let coffeeName = search.value;
+    console.log(coffeeName);
+    var filteredCoffees = [];
+    coffees.forEach(function(coffee) {
+        if (coffee.name.toUpperCase().indexOf(coffeeName.toUpperCase()) > -1) {
+            filteredCoffees.push(coffee);
+        }
+    });
+    console.log(filteredCoffees);
     coffeeBody.innerHTML = renderCoffees(filteredCoffees)
 }
 
@@ -55,6 +77,8 @@ var submitButton1 = document.querySelector('#submit1');
 let submitButton2 = document.querySelector("#submit2");
 let roastSelection1 = document.querySelector("#roast-selection1");
 let roastSelection2 = document.querySelector('#roast-selection2');
+let search = document.querySelector("#searchCoffee");
+let inputCoffee = document.querySelector("#inputCoffee");
 
 coffeeBody.innerHTML = renderCoffees(coffees);
 
@@ -75,52 +99,8 @@ roastSelection1.addEventListener("change", function() {
     })
 })
 
-
-const input = document.querySelector('input[type="search"]');
- const name = document.querySelector("#name");
-input.addEventListener('search', () => {
-    coffees.forEach(coffee => {
-        if (input.value.toUpperCase() === coffee.name.toUpperCase()) {
-            coffeeBody.innerHTML = renderCoffee(coffee);
-        }
-    })
-})
-
-// const input = document.querySelector('input[type="search"]');
-// const log = document.getElementById('name');
-// var a, coffeeValue, filter;
-// input.addEventListener('input', () =>{
-//     for(var i =0; i < name.length; i++){
-//         a = coffees[i].input[0];
-//         coffeeValue = a.textContent || a.innerText;
-//         if (coffeeValue.toUpperCase().indexOf(filter) > -1) {
-//             coffees[i].style.display = "";
-//         } else{
-//             coffees[i].style.display = "none";
-//         }
-//         }
-//
-// });
-
-
-
-const input2 = document.querySelector('input[type="search"]')
-
-input.addEventListener('search1')
+search.addEventListener('keyup', searchCoffees)
 
 
 
 
-
-// Loop through all list items, and hide those who don't match the search query
-// for (i = 0; i < coffees.length; i++) {
-//     a = coffees[i].getElementsByTagName("a")[0];
-//     txtValue = a.textContent || a.innerText;
-//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//         li[i].style.display = "";
-//     } else {
-//         li[i].style.display = "none";
-//     }
-// }
-// Tip: Remove toUpperCase() if you want to perform a case-sensitive search.
-//Insert pics for each cup of coffee
