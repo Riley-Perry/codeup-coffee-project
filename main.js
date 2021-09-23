@@ -14,7 +14,7 @@ function renderCoffees(coffees) {
 
     for(var i = coffees.length - 1; i >= 0; i--) {
 
-            html += renderCoffee(coffees[i]);
+        html += renderCoffee(coffees[i]);
     }
     return html;
 
@@ -30,7 +30,6 @@ function updateCoffees(e) {
         }
     });
     coffeeBody.innerHTML = renderCoffees(filteredCoffees)
-    // tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -67,26 +66,16 @@ roastSelection1.addEventListener("change", function() {
     let html = '';
     coffees.forEach(coffee => {
         if (selectedRoast === coffee.roast) {
-            console.log(coffee);
+            console.log(renderCoffee(coffee));
+            coffeeBody.innerHTML = html += renderCoffee(coffee);
 
+        } else if (selectedRoast === "all") {
+            coffeeBody.innerHTML = renderCoffees(coffees);
         }
     })
 })
 
-// Loop through all list items, and hide those who don't match the search query
-// for (i = 0; i < li.length; i++) {
-//     a = li[i].getElementsByTagName("a")[0];
-//     txtValue = a.textContent || a.innerText;
-//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//         li[i].style.display = "";
-//     } else {
-//         li[i].style.display = "none";
-//     }
-// }
-// Tip: Remove toUpperCase() if you want to perform a case-sensitive search.
- new-perry-branch-2
 
 
-=======
-//Insert pics for each cup of coffee
- main
+
+
