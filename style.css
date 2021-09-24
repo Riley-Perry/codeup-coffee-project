@@ -1,9 +1,5 @@
 
-#coffeeBean {
-    animation-name: slideIn;
-    animation-delay: 4s;
-    animation-iteration-count: 5;
-}
+
 
 body{
     background-color: #583101;
@@ -16,18 +12,6 @@ label {
     font-weight: bolder;
 }
 
-@keyframes slideIn {
-    from {
-        margin-left: 100%;
-        width: 300%;
-    }
-
-    to {
-        margin-left: 0;
-        width: 100%;
-    }
-}
-
 .mx-auto{
     height: 200px;
     width: 200px;
@@ -38,7 +22,7 @@ label {
     animation-timing-function: ease-out;
     animation-delay: 0s;
     animation-direction: alternate;
-    animation-iteration-count: 1;
+    animation-iteration-count: 3;
     animation-fill-mode: none;
     animation-play-state: running;
     z-index: -100;
@@ -79,4 +63,28 @@ hr{
 
 #bodyBox{
     margin-top: 5em;
+}
+
+.btn{
+    box-shadow: 0 1px 0 0 #fff6af;
+    background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-color:#ffec64;
+    border-radius:6px;
+    border:1px solid #ffaa22;
+    display:inline-block;
+    cursor:pointer;
+    color:#333333;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0 1px 0 #ffee66;
+}
+.btn:hover {
+    background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    background-color:#ffab23;
+}
+.btn:active {
+    position:relative;
+    top:1px;
 }
