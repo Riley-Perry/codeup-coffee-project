@@ -1,5 +1,10 @@
 
-
+#coffeeMaker{
+    position: fixed;
+    height: 915px;
+    width: 100%;
+    z-index: 2000;
+}
 
 body{
     background-color: #583101;
@@ -20,12 +25,13 @@ label {
     animation-name: stretch;
     animation-duration: 1.5s;
     animation-timing-function: ease-out;
-    animation-delay: 0s;
+    animation-delay: 11.5s;
     animation-direction: alternate;
-    animation-iteration-count: 3;
+    animation-iteration-count: 1;
     animation-fill-mode: none;
     animation-play-state: running;
     z-index: -100;
+
 }
 
 @keyframes stretch {
@@ -79,6 +85,7 @@ hr{
     padding:6px 24px;
     text-decoration:none;
     text-shadow:0 1px 0 #ffee66;
+
 }
 .btn:hover {
     background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
@@ -88,3 +95,9 @@ hr{
     position:relative;
     top:1px;
 }
+
+/*.form-group{*/
+/*    padding-left: 125px;*/
+/*    padding-right: 125px;*/
+/*}*/
+
