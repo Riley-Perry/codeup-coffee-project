@@ -31,10 +31,20 @@ function pushFunction(e) {
     var roastAndName = {
         id: coffees.length += 1,
         name :  inputCoffee.value,
-        roast : roastSelection2.value
+        roast : roastSelection2.value,
+        imgURL : coffees.imgURL
     }
-    localStorage.setItem("newCoffee", JSON.stringify(roastAndName));
-    var newestCoffee = JSON.parse(localStorage.getItem('newCoffee'));
+
+    if (roastSelection2.value === "light") {
+        roastAndName.imgURL = "images/img.png";
+    } else if (roastSelection2.value === "medium") {
+        roastAndName.imgURL = "images/img_1.png";
+    } else if (roastSelection2.value === "dark") {
+        roastAndName.imgURL = "images/img_2.png";
+    }
+
+    // localStorage.setItem("newCoffee", JSON.stringify(roastAndName));
+    // var newestCoffee = JSON.parse(localStorage.getItem('newCoffee'));
     coffees.pop();
     coffees.push(newestCoffee);
     coffeeBody.innerHTML = renderCoffees(coffees);
