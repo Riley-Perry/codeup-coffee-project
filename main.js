@@ -1,10 +1,10 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="col-md-6 d-flex mb-3">';
-    html += '<h3 id="name">' + coffee.name + '</h3>';
+    var html = '<div class="coffee col-md-6 d-flex mb-3 p-2">';
+    html += '<img src=' + coffee.imgURL + ' class="image" height="30px" mr-2 />';
+    html += '<h3 id="name" class="ml-2">' + coffee.name + '</h3>';
     html += '<p>' + coffee.roast + '</p>';
-    html += '<img' + coffee.imgURL + '>';
     html += '</div>';
 
 
@@ -58,20 +58,20 @@ function searchCoffees(e) {
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
+    {id: 1, name: 'Light City', roast: 'light', imgURL: "images/img.png"},
+    {id: 2, name: 'Half City', roast: 'light', imgURL: "images/img.png"},
+    {id: 3, name: 'Cinnamon', roast: 'light', imgURL: "images/img.png"},
+    {id: 4, name: 'City', roast: 'medium', imgURL: "images/img_1.png"},
+    {id: 5, name: 'American', roast: 'medium', imgURL: "images/img_1.png"},
+    {id: 6, name: 'Breakfast', roast: 'medium', imgURL: "images/img_1.png"},
+    {id: 7, name: 'High', roast: 'dark', imgURL: "images/img_2.png"},
+    {id: 8, name: 'Continental', roast: 'dark', imgURL: "images/img_2.png"},
+    {id: 9, name: 'New Orleans', roast: 'dark', imgURL: "images/img_2.png"},
+    {id: 10, name: 'European', roast: 'dark', imgURL: "images/img_2.png"},
+    {id: 11, name: 'Espresso', roast: 'dark', imgURL: "images/img_2.png"},
+    {id: 12, name: 'Viennese', roast: 'dark', imgURL: "images/img_2.png"},
+    {id: 13, name: 'Italian', roast: 'dark', imgURL: "images/img_2.png"},
+    {id: 14, name: 'French', roast: 'dark', imgURL: "images/img_2.png"},
 ];
 
 var coffeeBody = document.querySelector('#coffees');
