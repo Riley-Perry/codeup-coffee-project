@@ -4,7 +4,7 @@ function renderCoffee(coffee) {
     var html = '<div class="col-md-6 d-flex mb-3">';
     html += '<h3 id="name">' + coffee.name + '</h3>';
     html += '<p>' + coffee.roast + '</p>';
-    html += '<img' + coffee.imgURL + '>'
+    html += '<img' + coffee.imgURL + '>';
     html += '</div>';
 
 
@@ -22,25 +22,23 @@ function renderCoffees(coffees) {
 
 }
 
-function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
-    let selectedRoast2 = roastSelection2.value;
-    let coffeeInput = inputCoffee.value;
-    var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast2) {
-            filteredCoffees.push(coffee);
-        }
-    });
-    coffeeBody.innerHTML = renderCoffees(filteredCoffees)
 
+function pushFunction(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+
+    var roastAndName = {
+        id: coffees.length += 1,
+        name :  inputCoffee.value,
+        roast : roastSelection2.value
+    }
+
+    coffees.pop();
+    coffees.push(roastAndName);
+
+    coffeeBody.innerHTML = renderCoffees(coffees);
 }
 
-// const roastAndName = {
-//     roastSelection2 : coffees.roast.value,
-//     coffeeInput :  input.value,
-//     id: coffees.id += 1
-// }
+
 
 function searchCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
@@ -58,10 +56,10 @@ function searchCoffees(e) {
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
-    {id: 1, name: 'Light City', roast: 'light', imgURL: "images/light_coffee_beans.jpeg"},
-    {id: 2, name: 'Half City', roast: 'light', imgURL:"images/light_coffee_beans.jpeg"},
-    {id: 3, name: 'Cinnamon', roast: 'light', imgURL: "images/light_coffee_beans.jpeg"},
-    {id: 4, name: 'City', roast: 'medium', imgURL: "images/medium_coffee_beans.jpeg"},
+    {id: 1, name: 'Light City', roast: 'light'},
+    {id: 2, name: 'Half City', roast: 'light'},
+    {id: 3, name: 'Cinnamon', roast: 'light'},
+    {id: 4, name: 'City', roast: 'medium'},
     {id: 5, name: 'American', roast: 'medium'},
     {id: 6, name: 'Breakfast', roast: 'medium'},
     {id: 7, name: 'High', roast: 'dark'},
@@ -80,12 +78,13 @@ let submitButton2 = document.querySelector("#submit2");
 let roastSelection1 = document.querySelector("#roast-selection1");
 let roastSelection2 = document.querySelector('#roast-selection2');
 let search = document.querySelector("#searchCoffee");
-let inputCoffee = document.querySelector("#inputCoffee");
+let inputCoffee = document.querySelector("#input-coffee");
+
 
 coffeeBody.innerHTML = renderCoffees(coffees);
 
-submitButton1.addEventListener('click', updateCoffees);
-submitButton2.addEventListener('click', updateCoffees);
+submitButton1.addEventListener('click', searchCoffees);
+submitButton2.addEventListener('click', pushFunction);
 
 roastSelection1.addEventListener("change", function() {
     let selectedRoast = roastSelection1.value;
