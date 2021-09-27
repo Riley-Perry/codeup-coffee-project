@@ -1,7 +1,7 @@
 
 #coffeeMaker{
     position: fixed;
-    height: 915px;
+    height: 1000px;
     width: 100%;
     z-index: 2000;
 }
@@ -101,3 +101,6 @@ hr{
 /*    padding-right: 125px;*/
 /*}*/
 
+.image{
+    border-radius: 50%;
+}
