@@ -68,7 +68,7 @@ hr{
 .btn{
     box-shadow: 0 1px 0 0 #fff6af;
     background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-    background-color: #b9a83c;
+    background-color:#ffec64;
     border-radius:6px;
     border:1px solid #ffaa22;
     display:inline-block;
