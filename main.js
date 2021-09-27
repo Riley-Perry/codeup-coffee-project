@@ -13,7 +13,9 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     var html = '';
-
+    if(localStorage.getItem("newCoffee")){
+        coffees.push(JSON.parse(localStorage.getItem('newCoffee')))
+    }
     for(var i = coffees.length - 1; i >= 0; i--) {
 
         html += renderCoffee(coffees[i]);
@@ -31,10 +33,10 @@ function pushFunction(e) {
         name :  inputCoffee.value,
         roast : roastSelection2.value
     }
-
+    localStorage.setItem("newCoffee", JSON.stringify(roastAndName));
+    var newestCoffee = JSON.parse(localStorage.getItem('newCoffee'));
     coffees.pop();
-    coffees.push(roastAndName);
-
+    coffees.push(newestCoffee);
     coffeeBody.innerHTML = renderCoffees(coffees);
 }
 
